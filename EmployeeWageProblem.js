@@ -41,7 +41,7 @@ function getWorkingHours(empCheck)
           return 0;
   }
 }
-
+/*
 {
       let empHrs=0;
       let empCheck=Math.floor(Math.random()*10)%3;
@@ -49,3 +49,15 @@ function getWorkingHours(empCheck)
       let empWage=empHrs*WAGE_PER_HOUR;
       console.log("UC3 - Hour: "+empHrs+" Emp Wage: "+empWage);
 }
+*/
+//UC 4
+ 
+ let totalEmpHrs=0;
+ for(let day=0;day<NUM_OF_WORKING_DAYS;day++)
+ {
+   let empCheck=Math.floor(Math.random()*10)%3;
+   totalEmpHrs+=getWorkingHours(empCheck);
+ }
+
+ let empWage=totalEmpHrs*WAGE_PER_HOUR;
+ console.log("Hour: "+totalEmpHrs+" Emp Wage: "+empWage);
