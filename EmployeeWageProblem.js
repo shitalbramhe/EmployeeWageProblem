@@ -1,27 +1,51 @@
-//UC2 - Ability to Calculate Daily Employee Wage based on part time or full time work 
-const IS_ABSENT = 0;
-const IS_PART_TIME = 1;
-const IS_FULL_TIME = 2;
-const PART_TIME_HOURS = 4;
-const FULL_TIME_HOURS = 8;
-const WAGE_PER_HOUR = 20;
-let empHrs = 0;
-//Math.random() provides a random number from 0,1 ) 
-let empCheck = Math.floor(Math.random() * 3) ;
-switch (empCheck) {
-    case IS_ABSENT:
-        
-        empHrs = 0;
-        break;
-    case IS_PART_TIME:
-        empHrs = PART_TIME_HOURS; //const PART_TIME_HOURS = 4;
-        break;
-    case IS_FULL_TIME:
-        empHrs = FULL_TIME_HOURS; //const PART_TIME_HOURS = 8;
-        break;
+const IS_PART_TIME=1;
+const IS_FULL_TIME=2;
+const PART_TIME_HOURS=4;
+const FULL_TIME_HOURS=8;
+const WAGE_PER_HOUR=20;
+const NUM_OF_WORKING_DAYS=2;
+
+//UC2
+/*let empHrs=0;
+
+let empCheck=Math.floor(Math.random()* 10 % 3);
+switch(empCheck)
+{
+ case IS_PART_TIME:
+      empHrs=PART_TIME_HOURS;
+      break;
+case IS_FULL_TIME:
+      empHrs=FULL_TIME_HOURS;
+      break;
+default:
+      empHrs=0;
+
+}
+let empWage = empHrs * WAGE_PER_HOUR;
+console.log("Emp wage: "+empWage);
+*/
+
+//UC 3 Function
+
+
+
+function getWorkingHours(empCheck)
+{
+  switch(empCheck)
+  {
+   case IS_PART_TIME:
+         return PART_TIME_HOURS;
+   case IS_FULL_TIME:
+         return FULL_TIME_HOURS;
     default:
-        break;
+          return 0;
+  }
 }
 
-let empWage = empHrs * WAGE_PER_HOUR; //const WAGE_PER_HOUR = 20;
-console.log("Emp Wage: " + empWage);
+{
+      let empHrs=0;
+      let empCheck=Math.floor(Math.random()*10)%3;
+      empHrs=getWorkingHours(empCheck);
+      let empWage=empHrs*WAGE_PER_HOUR;
+      console.log("UC3 - Hour: "+empHrs+" Emp Wage: "+empWage);
+}
